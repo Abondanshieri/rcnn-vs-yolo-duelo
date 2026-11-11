@@ -20,6 +20,8 @@ Comparar la detección de objetos con una aproximación de dos etapas (**Faster 
 | E | Análisis de hallazgos | Sección 5 de este documento | `comparacion_rcnn_vs_yolo.png` |
 | F | Informe-resumen | Este README | — |
 
+> Los archivos `resumen_*.json` los genera cada notebook al ejecutarse en Colab y **no están incluidos** en este repositorio; en la carpeta `resultados/` solo están los CSV y la figura comparativa. Los valores de mAP de la sección 4 salen de `resumen_imagenes_*.json`.
+
 ## 3. Configuración experimental
 
 Para que la comparación sea justa, los cuatro notebooks usan los mismos parámetros:
@@ -30,8 +32,8 @@ Para que la comparación sea justa, los cuatro notebooks usan los mismos paráme
 | Tamaño de entrada (`IMGSZ`) | 640 |
 | Imágenes | COCO128 (128 imágenes con etiquetas) |
 | Video | <!-- COMPLETAR: nombre, resolución y duración del video --> · 300 frames procesados |
-| Modelo YOLO | YOLO11n (`yolo11n.pt`, ultralytics) <!-- confirmar --> |
-| Modelo Faster R-CNN | ResNet50-FPN v2 (torchvision, pesos COCO) <!-- confirmar --> |
+| Modelo YOLO | YOLO11n (`yolo11n.pt`, ultralytics) |
+| Modelo Faster R-CNN | `fasterrcnn_resnet50_fpn_v2` (torchvision, pesos `COCO_V1`) |
 | Hardware | Google Colab, GPU <!-- COMPLETAR: p. ej. T4 --> |
 | Latencia | Tiempo de extremo a extremo por entrada (preprocesamiento + inferencia + postprocesamiento), con *warm-up* previo |
 | mAP | `torchmetrics` (mismo evaluador en A y B), con umbral bajo de 0.001 |
